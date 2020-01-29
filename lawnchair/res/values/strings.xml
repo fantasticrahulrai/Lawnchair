@@ -181,6 +181,13 @@
         <item>It’s a beautiful day outside!</item>
     </string-array>
 
+    <string-array name="greetings_noon">
+        <item>You are halfway through the day</item>
+        <item>Good Afternoon!</item>
+        <item>Stay focused on the second half</item>
+        <item>Still have half day, make it count</item>
+    </string-array>
+
     <string-array name="greetings_evening">
         <item>What’s up?</item>
         <item>Good evening!</item>
@@ -462,7 +469,7 @@
     <string name="suggested_action_content_description">“%1$s” opens in “%2$s”.</string>
 
     <string name="smartspace_setup_text">Tap to Set Up</string>
-    <string name="lawnchair_settings">Lawnchair Settings</string>
+    <string name="lawnchair_settings">Launcher Settings</string>
 
     <string name="label_voice_search">Voice Search</string>
     <string name="icon_pack">Icon Pack</string>
@@ -473,7 +480,7 @@
     <string name="title_disable_suggestions_prompt">Disable App Suggestions</string>
     <string name="msg_disable_suggestions_prompt">"Usage data will be deleted."</string>
 
-    <string name="app_name_lawnchair">Lawnchair</string>
+    <string name="app_name_lawnchair">WallUnix Launcher</string>
     <string name="pixel_style_pref_title">Google Pixel</string>
 
     <string name="label_turn_off_suggestions">Disable</string>
@@ -795,9 +802,9 @@
 
     <string name="icon_shape_system_default">Set by System</string>
     <string name="title_missing_notification_access">Notification access needed.</string>
-    
+
     <string name="activity_not_found">App not installed.</string>
-    
+
     <string name="out_of_space">No more room on the Desktop.</string>
     <string name="hotseat_out_of_space">No more room in the Dock.</string>
 

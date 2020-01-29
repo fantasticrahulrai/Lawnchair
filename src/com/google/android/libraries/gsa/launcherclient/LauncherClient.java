@@ -20,10 +20,12 @@ import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.WindowManager.LayoutParams;
+import android.widget.Toast;
 import ch.deletescape.lawnchair.FeedBridge;
 import ch.deletescape.lawnchair.FeedBridge.BridgeInfo;
 import com.google.android.libraries.launcherclient.ILauncherOverlay;
 import com.google.android.libraries.launcherclient.ILauncherOverlayCallback;
+import hd.uhd.TrailActivity;
 import java.lang.ref.WeakReference;
 
 public class LauncherClient {
@@ -283,6 +285,12 @@ public class LauncherClient {
     }
 
     public final void startScroll() {
+
+        //Toast.makeText(mActivity, "Starting Feed", Toast.LENGTH_SHORT).show();
+
+       // Intent intent = new Intent(mActivity, TrailActivity.class);
+       // mActivity.startActivity(intent);
+
         if (isConnected()) {
             try {
                 mOverlay.startScroll();
@@ -338,6 +346,8 @@ public class LauncherClient {
     public final void showOverlay(boolean feedRunning) {
         if (mOverlay != null) {
             try {
+                //Intent intent = new Intent(mLauncher, TrailActivity.class);
+                // mLauncher.startActivity(intent);
                 mOverlay.openOverlay(feedRunning ? 1 : 0);
             } catch (RemoteException ignored) {
             }

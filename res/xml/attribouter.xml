@@ -4,7 +4,7 @@
         repo="LawnchairLauncher/Lawnchair"
         icon="@mipmap/ic_launcher"
         description="^@string/about_app_description"
-        playStoreUrl="https://play.google.com/store/apps/details?id=ch.deletescape.lawnchair.plah"
+        playStoreUrl="https://play.google.com/store/apps/details?id=best.pixellauncher.launcher"
         websiteUrl="https://lawnchair.app">
         <me.jfenn.attribouter.wedges.link.LinkWedge
             name="@string/about_twitter"

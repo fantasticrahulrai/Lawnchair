@@ -359,6 +359,15 @@
             android:screenOrientation="locked"
             android:theme="@style/SleepTimeoutTheme"/>
 
+        <!-- Rahul Rai modifications -->
+        <activity android:name="hd.uhd.TrailActivity"
+            android:theme="@style/WallUnixTheme"></activity>
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="1f4b75b02f99c86c10b5d24eab886ea489566d45" />
+
+
         <!-- DT2S using device admin -->
         <receiver
             android:description="@string/dt2s_admin_hint"

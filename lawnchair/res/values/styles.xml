@@ -392,4 +392,12 @@
         <item name="keyShadowOffset">@dimen/smartspaceKeyShadowOffset</item>
         <item name="customFontType">smartspaceText</item>
     </style>
+
+
+    <style name="WallUnixTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
 </resources>

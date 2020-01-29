@@ -27,9 +27,9 @@ import android.os.Bundle
 import android.provider.Settings
 import android.support.annotation.Keep
 import ch.deletescape.lawnchair.blur.BlurWallpaperProvider
-import ch.deletescape.lawnchair.flowerpot.Flowerpot
 import ch.deletescape.lawnchair.bugreport.BugReportClient
 import ch.deletescape.lawnchair.bugreport.BugReportService
+import ch.deletescape.lawnchair.flowerpot.Flowerpot
 import ch.deletescape.lawnchair.iconpack.IconPackManager
 import ch.deletescape.lawnchair.sesame.Sesame
 import ch.deletescape.lawnchair.smartspace.LawnchairSmartspaceController
@@ -39,7 +39,9 @@ import com.android.launcher3.BuildConfig
 import com.android.launcher3.R
 import com.android.launcher3.Utilities
 import com.android.quickstep.RecentsActivity
-import com.squareup.leakcanary.LeakCanary
+import com.crashlytics.android.Crashlytics
+import com.crashlytics.android.answers.Answers
+import io.fabric.sdk.android.Fabric
 import ninja.sesame.lib.bridge.v1.SesameFrontend
 import ninja.sesame.lib.bridge.v1.SesameInitOnComplete
 import ninja.sesame.lib.bridge.v1_1.LookFeelKeys
@@ -58,14 +60,19 @@ class LawnchairApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        if (BuildConfig.HAS_LEAKCANARY && lawnchairPrefs.initLeakCanary) {
+
+
+        Fabric.with(this, Crashlytics())
+        Fabric.with(this, Answers())
+
+       /* if (BuildConfig.HAS_LEAKCANARY && lawnchairPrefs.initLeakCanary) {
             if (LeakCanary.isInAnalyzerProcess(this)) {
                 // This process is dedicated to LeakCanary for heap analysis.
                 // You should not init your app in this process.
                 return
             }
             LeakCanary.install(this)
-        }
+        }*/
     }
 
     fun onLauncherAppStateCreated() {

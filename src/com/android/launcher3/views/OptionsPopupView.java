@@ -43,6 +43,7 @@ import com.android.launcher3.userevent.nano.LauncherLogProto.ControlType;
 import com.android.launcher3.util.PackageManagerHelper;
 import com.android.launcher3.widget.WidgetsFullSheet;
 
+import hd.uhd.TrailActivity;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -200,6 +201,7 @@ public class OptionsPopupView extends ArrowPopup
             Toast.makeText(launcher, R.string.msg_disabled_by_admin, Toast.LENGTH_SHORT).show();
             return false;
         }
+
         Intent intent = new Intent(Intent.ACTION_SET_WALLPAPER)
                 .putExtra(EXTRA_WALLPAPER_OFFSET,
                         launcher.getWorkspace().getWallpaperOffsetForCenterPage());
@@ -215,6 +217,10 @@ public class OptionsPopupView extends ArrowPopup
             // If there is no target package, use the default intent chooser animation
             intent.putExtra(INTENT_EXTRA_IGNORE_LAUNCH_ANIMATION, true);
         }
+
+        //Toast.makeText(launcher, "Starting Wallunix", Toast.LENGTH_SHORT).show();
+        //Intent intent = new Intent(launcher, TrailActivity.class);
+
         return launcher.startActivitySafely(v, intent, null);
     }
 
