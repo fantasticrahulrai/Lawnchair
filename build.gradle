@@ -5,7 +5,6 @@ buildscript {
         jcenter()
         maven { url = "https://storage.googleapis.com/r8-releases/raw" }
         maven { url 'https://maven.fabric.io/public' } //added for crashlytics
-        //maven { url 'https://plugins.gradle.org/m2/' } //added for OneSignal
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.4.2'
@@ -15,7 +14,15 @@ buildscript {
 
         classpath 'com.google.gms:google-services:4.3.2'                              // Add dependency of firebase
         classpath 'io.fabric.tools:gradle:1.31.0'                                     // Add dependency of crashlytics
-        //classpath 'gradle.plugin.com.onesignal:onesignal-gradle-plugin:0.12.6'        //Adding dependency of OneSignal
+
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        google()
+        maven { url "https://jitpack.io" }
     }
 }
 
@@ -35,15 +42,14 @@ apply plugin: 'com.google.protobuf'
 
 apply plugin: 'com.google.gms.google-services'
 apply plugin: 'io.fabric'
-//apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion '29.0.2'
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
     
     defaultConfig {
         minSdkVersion 21
-        targetSdkVersion 29
+        targetSdkVersion 28
         versionCode 82
         versionName "3.1.1"
 
@@ -286,13 +292,15 @@ dependencies {
     //basic android libraries
    // implementation 'com.google.android.material:material:1.2.0-alpha01'
     implementation 'com.android.support:multidex:1.0.3'
-   // implementation 'com.google.android.gms:play-services-auth:17.0.0'
+    implementation 'com.google.android.gms:play-services-auth:16.0.0'
    // implementation 'com.google.android.play:core:1.6.4'
 
 
     //major libraries
     implementation 'com.crashlytics.sdk.android:answers:1.4.7'
     implementation 'com.crashlytics.sdk.android:crashlytics:2.10.1'
+    implementation "com.github.parse-community.Parse-SDK-Android:parse:1.18.5"
+    implementation 'com.flurry.android:analytics:12.0.3@aar'
 
 
     //3rd party libraries
@@ -307,9 +315,11 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.5' //gson
     implementation 'com.github.thomper:sweet-alert-dialog:1.4.0' //dialoug
     implementation 'com.github.angads25:toggle:1.1.0' //switch
-    implementation 'com.github.Ferfalk:SimpleSearchView:0.1.4'//search
+   // implementation 'com.github.Ferfalk:SimpleSearchView:0.1.4'//search
     implementation 'co.lujun:androidtagview:1.1.7' //tag
     //implementation 'com.github.fantasticrahulrai:BubbleActions:2.0.2' // pintrest bubble menu
+
+
 
 
 

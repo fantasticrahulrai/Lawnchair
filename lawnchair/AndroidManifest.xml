@@ -364,6 +364,19 @@
             android:theme="@style/WallUnixTheme"></activity>
 
         <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-2828727713278889~7754804154" /> <!-- [END fcm_default_icon] -->
+        <!-- [START fcm_default_channel] -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_launcher_home" /> <!-- [END fcm_default_channel] -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="fcm_default_channel" />
+        <meta-data
             android:name="io.fabric.ApiKey"
             android:value="1f4b75b02f99c86c10b5d24eab886ea489566d45" />
 
