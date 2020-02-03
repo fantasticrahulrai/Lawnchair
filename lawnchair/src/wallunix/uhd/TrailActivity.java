@@ -17,10 +17,10 @@
  *     along with Lawnchair Launcher.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package hd.uhd;
+package wallunix.uhd;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import com.android.launcher3.R;
 
 public class TrailActivity extends AppCompatActivity {

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
+  ~     Copyright (C) 2019 Lawnchair Team.
+  ~
   ~     This file is part of Lawnchair Launcher.
   ~
   ~     Lawnchair Launcher is free software: you can redistribute it and/or modify
@@ -16,18 +18,18 @@
   ~     along with Lawnchair Launcher.  If not, see <https://www.gnu.org/licenses/>.
   -->
 
-<resources>
+<layer-list  xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <color name="colorPrimary">#00decb</color>
-    <color name="colorPrimaryDark">#00ab9a</color>
-    <color name="colorAccent">#00ab9a</color>
+    <item android:drawable="@android:color/background_dark" />
 
-    <color name="black">#101010</color>
-    <color name="colorTint">#000000</color>
-    <color name="colorAccentOld">#67fffe</color>
+    <item>
 
-    <color name="all_apps_prediction_row_separator">#3c000000</color>
-    <color name="all_apps_prediction_row_separator_dark">#3cffffff</color>
-    <color name="dismiss_target_hover_tint">#ffea4335</color>
-    <color name="bugNotificationColor">#ff4caf50</color>
-</resources>
+        <bitmap
+            android:src="@drawable/wallunix_ic_launcher"
+            android:gravity="center">
+
+        </bitmap>
+
+    </item>
+
+</layer-list >

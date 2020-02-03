@@ -469,7 +469,6 @@
     <string name="suggested_action_content_description">“%1$s” opens in “%2$s”.</string>
 
     <string name="smartspace_setup_text">Tap to Set Up</string>
-    <string name="lawnchair_settings">Launcher Settings</string>
 
     <string name="label_voice_search">Voice Search</string>
     <string name="icon_pack">Icon Pack</string>
@@ -480,7 +479,6 @@
     <string name="title_disable_suggestions_prompt">Disable App Suggestions</string>
     <string name="msg_disable_suggestions_prompt">"Usage data will be deleted."</string>
 
-    <string name="app_name_lawnchair">WallUnix Launcher</string>
     <string name="pixel_style_pref_title">Google Pixel</string>
 
     <string name="label_turn_off_suggestions">Disable</string>
@@ -807,5 +805,136 @@
 
     <string name="out_of_space">No more room on the Desktop.</string>
     <string name="hotseat_out_of_space">No more room in the Dock.</string>
+
+
+    <!-- ************************************************** Wallunix Strings ********************************************************** -->
+
+    <string name="app_name_lawnchair">WallUnix Launcher</string>
+    <string name="lawnchair_settings">Launcher Settings</string>
+
+    <string name="app_name">WallUnix</string>
+    <string name="tag_line">Your Daily Wallpaper app</string>
+    <string name="package_name">hd.uhd.wallpapers.wallpaper</string>
+
+    <string name="version">Version</string>
+    <string name="author">Author</string>
+    <string name="special_thanks_to">Special thanks to</string>
+    <string name="changelog">Changelog</string>
+    <string name="licenses">Licenses</string>
+    <string name="intro_label">Introduction</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="support_development">Support development</string>
+
+    <string name="write_an_email">Write an email</string>
+    <string name="add_to_google_plus_circles">Add to Google Plus circles</string>
+    <string name="follow_on_twitter">Follow on Twitter</string>
+    <string name="visit_website">Visit website</string>
+    <string name="email">Email</string>
+    <string name="facebook">Facebook</string>
+    <string name="website">Website</string>
+
+    <string name="rohan_rai">Rohan Rai</string>
+    <string name="rohan_rai_summary">For his idea and concept.</string>
+    <string name="nashrat">Nasharat Khankhana</string>
+    <string name="nashrat_summary">For being the core and valuable member of the team.</string>
+    <string name="designer">Anisha Designs</string>
+    <string name="designer_summary">For pretty app icon.</string>
+
+    <string name="report_bugs">Report bugs</string>
+    <string name="report_bugs_summary">Report bugs or request new features.</string>
+    <string name="join_community">Join the community</string>
+    <string name="join_community_summary">If you want to join as a designer or photographer and share your wallpaper on 4K Wallpapers, join the community.</string>
+    <string name="translate">Translate</string>
+    <string name="translate_summary">Help translating WallsHD to your native language.</string>
+    <string name="rate_on_google_play">Rate</string>
+    <string name="rate_on_google_play_summary">Leave a positive rating on Google Play if you like 4K Wallpapers.</string>
+    <string name="donate">Donate</string>
+    <string name="donate_summary">If you think I deserve to get paid for my work, you can leave me a few dollars here.</string>
+
+
+    <string name="title_activity_sponsor">Sponsor</string>
+    <string name="title_activity_about">About Us</string>
+
+
+    <!-- Strings related to Settings -->
+
+    <string name="title_activity_upload">Upload Wallpapers</string>
+    <string name="home">Home</string>
+    <string name="pro">Go Pro (Soon)</string>
+
+    <string name="about">About Us</string>
+    <string name="rate">Rate Us</string>
+    <string name="application">Application</string>
+    <string name="settings">Settings</string>
+    <string name="sponsor">Sponsor</string>
+    <string name="editors_choice">Editors\' Choice</string>
+    <string name="notch">Notch Wallpapers</string>
+    <string name="action_refresh">Refresh</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="auto_wallpaper_title">New Wallpapers Automatically</string>
+    <string name="auto_wallpaper_text">Auto Wallpaper</string>
+
+    <string name="auto_wallpaper_summary">Just turn this on and stay connected to internet to get new wallpaper surprises everyday on your homescreen.</string>
+    <string name="disclaimer">Disclaimer</string>
+    <string name="disclaimer_details">All the wallpapers in this app are under common creative license and the credit goes to their respective owners.
+        These images are not endorsed by any of the prospective owners, and the images are used simply for aesthetic purposes.
+        No copyright infringement is intended,
+        and any request to remove one of the images/logos/names will be honored.</string>
+
+    <string name="banner_ad_unit_id">ca-app-pub-2828727713278889/8734382321</string>
+    <string name="interstitial_ad_unit_id">ca-app-pub-2828727713278889/5031797266</string>
+    <string name="native_ad_unit_id">ca-app-pub-2828727713278889/8809014883</string>
+    <string name="interstital_ad_unit_artist">ca-app-pub-2828727713278889/8803092054</string>
+
+    <!-- -
+        This is an ad unit ID for an interstitial test ad. Replace with your own interstitial ad unit id.
+        For more information, see https://support.google.com/admob/answer/3052638
+    <!- -->
+    <string name="reward_ad_unit_id">ca-app-pub-2828727713278889/3364070330</string>
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+    <string name="fcm_message">New Wallpapers Added</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="categories">
+        <item>Abstract</item>
+        <item>Amoled</item>
+        <item>Animal</item>
+        <item>Art</item>
+        <item>Buildings</item>
+        <item>Cars</item>
+        <item>Cityscape</item>
+        <item>Fantasy</item>
+        <item>Flower</item>
+        <item>Games</item>
+        <item>Light</item>
+        <item>Love</item>
+        <item>Motorcycles</item>
+        <item>Movies</item>
+        <item>Minimal</item>
+        <item>Nature</item>
+        <item>People</item>
+        <item>Space</item>
+        <item>Sports</item>
+        <item>Technology</item>
+        <item>Others</item>
+        <item>Vehicle</item>
+        <item>Anime</item>
+        <item>Superheroes</item>
+    </string-array>
+
+
+    <string-array name="autowall_duration">
+        <item>Daily (Default)</item>
+        <item>6 Hours</item>
+        <item>3 Hours</item>
+        <item>1 Hour</item>
+    </string-array>
+
+    <string-array name="autowall_screens">
+        <item>Both (Home and Lockscreen)</item>
+        <item>Homescreen</item>
+        <item>Lockscreen</item>
+    </string-array>
 
 </resources>
