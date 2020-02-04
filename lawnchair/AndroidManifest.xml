@@ -359,8 +359,89 @@
             android:screenOrientation="locked"
             android:theme="@style/SleepTimeoutTheme"/>
 
-        <!-- Rahul Rai modifications -->
-        <activity android:name="hd.uhd.TrailActivity"
+        <!-- ***************************************** Rahul Rai modifications ****************************-->
+
+        <activity
+            android:name="wallunix.uhd.wallpaper.wallpapers4k.ExploreActivity"
+            android:theme="@style/AppThemeNoActionBar"/>
+        <activity
+            android:name="wallunix.uhd.wallpaper.wallpapers4k.WallpaperClickArtistActivity"
+            android:theme="@style/FullScreenTheme" />
+        <activity android:name="wallunix.uhd.wallpaper.wallpapers4k.ArtistWallpaperActivity" />
+        <activity android:name="wallunix.uhd.wallpaper.wallpapers4k.ArtistFollowingActivity" />
+        <activity android:name="wallunix.uhd.wallpaper.wallpapers4k.ArtistProfileActivity" />
+        <activity android:name="wallunix.uhd.wallpaper.wallpapers4k.ProfileActivity" />
+        <activity android:name="wallunix.uhd.wallpaper.wallpapers4k.CategoryClickActivity" />
+        <activity android:name="wallunix.uhd.wallpaper.wallpapers4k.CategoryActivity" />
+        <activity android:name="wallunix.uhd.wallpaper.wallpapers4k.PopularActivity" />
+        <activity
+            android:name="wallunix.uhd.wallpaper.wallpapers4k.IntroActivity"
+            android:theme="@style/FullScreenTheme" />
+        <activity
+            android:name="wallunix.uhd.wallpaper.wallpapers4k.WallpaperClickActivity"
+            android:theme="@style/FullScreenTheme" />
+        <activity
+            android:name="wallunix.uhd.wallpaper.wallpapers4k.AdminDetailActivity"
+            android:theme="@style/AppThemeNoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="4kwallpapers"
+                    android:scheme="http" />
+            </intent-filter>
+        </activity>
+        <activity android:name="wallunix.uhd.wallpaper.wallpapers4k.NotchWallpaperActivity" />
+        <activity android:name="wallunix.uhd.wallpaper.wallpapers4k.LockscreenActivity" />
+        <activity android:name="wallunix.uhd.wallpaper.wallpapers4k.AboutActivity" />
+        <activity
+            android:name="wallunix.uhd.wallpaper.wallpapers4k.MainActivity"
+            android:theme="@style/AppThemeNoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="4kwallpapers"
+                    android:scheme="http" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="4kwallpapersandbackgroundshd"
+                    android:scheme="http" />
+            </intent-filter>
+        </activity> <!-- Include the AdActivity configChanges and theme. -->
+        <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:theme="@android:style/Theme.Translucent" />
+        <activity
+            android:name="wallunix.uhd.wallpaper.wallpapers4k.FullscreenActivity"
+            android:theme="@style/FullScreenTheme" />
+        <activity
+            android:name="wallunix.uhd.wallpaper.wallpapers4k.SplashActivity"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="wallunix.uhd.wallpaper.wallpapers4k.AdminDashboardActivity" /> <!-- -Commment -->
+        <activity android:name="wallunix.uhd.wallpaper.wallpapers4k.SettingActivity" />
+        <activity android:name="wallunix.uhd.wallpaper.wallpapers4k.FavouriteActivity" />
+
+        <activity android:name="wallunix.TrailActivity"
             android:theme="@style/WallUnixTheme"></activity>
 
         <meta-data
@@ -379,6 +460,41 @@
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="1f4b75b02f99c86c10b5d24eab886ea489566d45" />
+        <meta-data
+            android:name="com.parse.SERVER_URL"
+            android:value="https://parseapi.back4app.com/" />
+        <meta-data
+            android:name="com.parse.APPLICATION_ID"
+            android:value="5ZSBrcMuwOZbJcOqkPEnHhd7PbKEl4psH574lr1g" />
+        <meta-data
+            android:name="com.parse.CLIENT_KEY"
+            android:value="uSFMY6ANnqoOoJprbAZAbA8bbETNzPcM6ylDYaOt" />
+
+        <receiver
+            android:name="wallunix.uhd.wallpaper.wallpapers4k.Classes.QuoteAlamarManagerBootReciver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name="wallunix.uhd.wallpaper.wallpapers4k.Classes.ShareBroadcast"
+            android:enabled="true"/>
+
+        <service
+            android:name="wallunix.uhd.wallpaper.wallpapers4k.Classes.AutoWallpaperScheduler"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <service
+            android:name="wallunix.uhd.wallpaper.wallpapers4k.Classes.QuoteScheduler"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+
+        <!-- ***************************************** Rahul Rai modifications ****************************-->
 
 
         <!-- DT2S using device admin -->

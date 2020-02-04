@@ -1,5 +1,5 @@
 /*
- *     Copyright (C) 2020 Lawnchair Team.
+ *     Copyright (C) 2019 Lawnchair Team.
  *
  *     This file is part of Lawnchair Launcher.
  *
@@ -17,17 +17,31 @@
  *     along with Lawnchair Launcher.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package wallunix.uhd;
+package wallunix.uhd.wallpaper.wallpapers4k.Classes;
 
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import com.android.launcher3.R;
+import android.app.job.JobParameters;
+import android.app.job.JobService;
 
-public class TrailActivity extends AppCompatActivity {
+public class AutoWallpaperScheduler extends JobService {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_trail);
+    public boolean onStartJob(JobParameters params) {
+
+       // Toast.makeText(this, "Auto Wallpaper started", Toast.LENGTH_SHORT).show();
+
+        AutoWallpaperAsyncTask task = new AutoWallpaperAsyncTask(this);
+        task.execute();
+
+        return false;
     }
+
+    @Override
+    public boolean onStopJob(JobParameters params) {
+
+       // Toast.makeText(this, "Auto Wallpaper stopped", Toast.LENGTH_SHORT).show();
+
+        return false;
+    }
+
 }
+
