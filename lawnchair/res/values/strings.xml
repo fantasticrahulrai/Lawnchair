@@ -810,7 +810,8 @@
     <!-- ************************************************** Wallunix Strings ********************************************************** -->
 
     <string name="app_name_lawnchair">WallUnix Launcher</string>
-    <string name="lawnchair_settings">Launcher Settings</string>
+    <string name="lawnchair_settings">WallUnix Settings</string>
+    <string name="wallunix_wallpaper">Wallpapers</string>
 
     <string name="app_name">WallUnix</string>
     <string name="tag_line">Your Daily Wallpaper app</string>
