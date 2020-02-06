@@ -142,7 +142,7 @@ public class AboutActivity extends AppCompatActivity implements View.OnClickList
             intent.putExtra(Intent.EXTRA_SUBJECT, "Wallunix");
             startActivity(Intent.createChooser(intent, "E-Mail"));
         } else if (v == translate) {
-           startUploadActivity();
+
         } else if (v == rateOnGooglePlay) {
             openUrl(RATE_ON_GOOGLE_PLAY);
         } else if (v == donate) {
@@ -151,9 +151,8 @@ public class AboutActivity extends AppCompatActivity implements View.OnClickList
             // } else {
             //startActivity(new Intent(this, PurchaseActivity.class));
             // }
-        }else if (v == joinCommunity)
-        {
-            startUploadActivity();
+        }else if (v == joinCommunity) {
+
         }
 
         else if (v == st_1a)
@@ -292,46 +291,5 @@ public class AboutActivity extends AppCompatActivity implements View.OnClickList
         attributionPresenter.showDialog("Open Source Libraries");
     }
 
-    public void startUploadActivity(){
-
-        ParseQuery<ParseObject> query = ParseQuery.getQuery("GameScore");
-        query.getInBackground("QQCxlBFytX", new GetCallback<ParseObject>() {
-            public void done(ParseObject object, ParseException e) {
-                if (e == null) {
-                    passwd = object.getString("playerName");
-                } else {
-
-                    Toast.makeText(getApplicationContext(), "Server Error "+ e, Toast.LENGTH_SHORT).show();
-
-                }
-            }
-        });
-
-        final AlertDialog.Builder alert = new AlertDialog.Builder(this);
-        alert.setTitle("");
-        alert.setMessage("");
-
-// Set an EditText view to get user input
-        final EditText input = new EditText(this);
-        alert.setView(input);
-
-        alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-
-            public void onClick(DialogInterface dialog, int whichButton) {
-                String value = input.getText().toString();
-                if (value.equals(passwd)){
-
-//HERE I AM STUCK!!!
-                    startActivity(new Intent(getApplicationContext(), AdminDashboardActivity.class));
-
-                }else{}
-// Do something with value!
-
-
-            }
-        });
-
-        alert.show();
-    }
 
 }

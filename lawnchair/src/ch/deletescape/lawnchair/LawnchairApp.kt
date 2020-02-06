@@ -41,6 +41,10 @@ import com.android.launcher3.Utilities
 import com.android.quickstep.RecentsActivity
 import com.crashlytics.android.Crashlytics
 import com.crashlytics.android.answers.Answers
+import com.flurry.android.FlurryAgent
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.parse.Parse
+import com.parse.ParseInstallation
 import io.fabric.sdk.android.Fabric
 import ninja.sesame.lib.bridge.v1.SesameFrontend
 import ninja.sesame.lib.bridge.v1.SesameInitOnComplete
@@ -54,6 +58,8 @@ class LawnchairApp : Application() {
     val recentsEnabled by lazy { checkRecentsComponent() }
     var accessibilityService: LawnchairAccessibilityService? = null
 
+    var mFirebaseAnalytics: FirebaseAnalytics? = null
+
     init {
         d("Hidden APIs allowed: ${Utilities.HIDDEN_APIS_ALLOWED}")
     }
@@ -61,27 +67,55 @@ class LawnchairApp : Application() {
     override fun onCreate() {
         super.onCreate()
 
-
         Fabric.with(this, Crashlytics())
         Fabric.with(this, Answers())
 
-       /* if (BuildConfig.HAS_LEAKCANARY && lawnchairPrefs.initLeakCanary) {
+        // Obtain the FirebaseAnalytics instance.
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this)
+
+        // Daddy Parse is back
+        Parse.initialize(Parse.Configuration.Builder(this)
+                                 .applicationId("5ZSBrcMuwOZbJcOqkPEnHhd7PbKEl4psH574lr1g")
+                                 .clientKey("uSFMY6ANnqoOoJprbAZAbA8bbETNzPcM6ylDYaOt")
+                                 .server("https://parseapi.back4app.com/")
+                                 .enableLocalDataStore()
+                                 .build()
+                        )
+        ParseInstallation.getCurrentInstallation().saveInBackground()
+
+
+        //Flurry analytics
+        FlurryAgent.Builder()
+                .withLogEnabled(true)
+                .build(this, "X35S8HRC74PZTP9BZ65T")
+
+        // OneSignal Initialization
+        //OneSignal.startInit(this)
+               // .inFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification)
+               // .unsubscribeWhenNotificationsAreDisabled(true)
+               // .init()
+
+
+        /* if (BuildConfig.HAS_LEAKCANARY && lawnchairPrefs.initLeakCanary) {
             if (LeakCanary.isInAnalyzerProcess(this)) {
-                // This process is dedicated to LeakCanary for heap analysis.
-                // You should not init your app in this process.
-                return
+         // This process is dedicated to LeakCanary for heap analysis.
+         // You should not init your app in this process.
+         return
             }
             LeakCanary.install(this)
         }*/
+
     }
 
     fun onLauncherAppStateCreated() {
+
         Thread.setDefaultUncaughtExceptionHandler(bugReporter)
         registerActivityLifecycleCallbacks(activityHandler)
 
         ThemeManager.getInstance(this).registerColorListener()
         BlurWallpaperProvider.getInstance(this)
         Flowerpot.Manager.getInstance(this)
+
         if (BuildConfig.FEATURE_BUG_REPORTER && lawnchairPrefs.showCrashNotifications) {
             BugReportClient.getInstance(this)
             BugReportService.registerNotificationChannel(this)

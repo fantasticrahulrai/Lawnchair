@@ -59,8 +59,6 @@ import org.json.JSONObject;
 import wallunix.uhd.wallpaper.wallpapers4k.Adapters.ImageAdapter;
 import wallunix.uhd.wallpaper.wallpapers4k.Classes.FavouriteWallpaperSqlite;
 import wallunix.uhd.wallpaper.wallpapers4k.Classes.OfflineWallpaperSqlite;
-import wallunix.uhd.wallpaper.wallpapers4k.Classes.Quotes;
-import wallunix.uhd.wallpaper.wallpapers4k.Classes.QuotesSqlite;
 import wallunix.uhd.wallpaper.wallpapers4k.Classes.Wallpaper;
 import wallunix.uhd.wallpaper.wallpapers4k.WallpaperClickActivity;
 
@@ -80,7 +78,7 @@ public class LatestFragment extends Fragment {
     SharedPreferences mUserDetails;
     SharedPreferences.Editor mEditor;
     String autoWallString = "null wallpaper";
-    Boolean tableCreated, quoteTableCreated;
+    Boolean tableCreated;
 
     private boolean hasLoadedOnce= false;
 
@@ -92,7 +90,6 @@ public class LatestFragment extends Fragment {
         // Required empty public constructor
     }
 
-    // TODO: Rename and change types and number of parameters
     public static LatestFragment newInstance(String param1, String param2) {
         LatestFragment fragment = new LatestFragment();
         Bundle args = new Bundle();
@@ -111,7 +108,6 @@ public class LatestFragment extends Fragment {
 
         mUserDetails = getActivity().getSharedPreferences("UserDetails", 0); // 0 - for private mode
         tableCreated = mUserDetails.getBoolean("tablecreated", false);
-        quoteTableCreated = mUserDetails.getBoolean("quotetablecreated", false);
 
         gridview = (GridView) v.findViewById(R.id.gridview);
         pullToRefresh = v.findViewById(R.id.pullToRefresh);
@@ -137,11 +133,6 @@ public class LatestFragment extends Fragment {
         }
         else {
             addWallpaperToOffline();
-        }
-
-        //***************quote table check**********
-        if (!quoteTableCreated) {
-            quoteToSqlite(getActivity());
         }
 
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -402,42 +393,5 @@ public class LatestFragment extends Fragment {
         });
 
     }
-
-    private List<Quotes> quoteToSqlite(Context context){
-
-        final List<Quotes> mQuoteListSqlite = new ArrayList<>();
-        QuotesSqlite sqdb = new QuotesSqlite(context);
-
-        try {
-            JSONObject mainObj = new JSONObject(loadJSONFromAsset(context, "quotes.json"));
-            JSONArray jsonArray = mainObj.getJSONArray("results");
-            JSONObject wallpaperObj;
-
-            for (int i = 0; i < jsonArray.length(); ++i) {
-
-                wallpaperObj = jsonArray.getJSONObject(i);
-
-                Gson gson = new Gson();
-                Quotes q = gson.fromJson(wallpaperObj.toString(), Quotes.class);
-                mQuoteListSqlite.add(q);
-
-
-            }
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-
-        }
-
-
-        sqdb.batchInsterstion(mQuoteListSqlite);
-
-        mEditor = mUserDetails.edit();
-        mEditor.putBoolean("tablecreated", true);
-        mEditor.apply();
-
-        return mQuoteListSqlite;
-    }
-
 
 }

@@ -17,7 +17,7 @@
  *     along with Lawnchair Launcher.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package wallunix.uhd.wallpaper.wallpapers4k.Classes;
+package wallunix.uhd.feed.quotes;
 
 import static wallunix.uhd.wallpaper.wallpapers4k.Classes.Utils.setAlarmQuote;
 

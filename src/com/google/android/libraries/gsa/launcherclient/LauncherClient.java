@@ -25,7 +25,6 @@ import ch.deletescape.lawnchair.FeedBridge;
 import ch.deletescape.lawnchair.FeedBridge.BridgeInfo;
 import com.google.android.libraries.launcherclient.ILauncherOverlay;
 import com.google.android.libraries.launcherclient.ILauncherOverlayCallback;
-import hd.uhd.TrailActivity;
 import java.lang.ref.WeakReference;
 
 public class LauncherClient {

@@ -43,9 +43,11 @@ import com.android.launcher3.userevent.nano.LauncherLogProto.ControlType;
 import com.android.launcher3.util.PackageManagerHelper;
 import com.android.launcher3.widget.WidgetsFullSheet;
 
-import hd.uhd.TrailActivity;
 import java.util.ArrayList;
 import java.util.List;
+import wallunix.uhd.wallpaper.wallpapers4k.AboutActivity;
+import wallunix.uhd.wallpaper.wallpapers4k.MainActivity;
+import wallunix.uhd.wallpaper.wallpapers4k.SplashActivity;
 
 /**
  * Popup shown on long pressing an empty space in launcher
@@ -202,7 +204,7 @@ public class OptionsPopupView extends ArrowPopup
             return false;
         }
 
-        Intent intent = new Intent(Intent.ACTION_SET_WALLPAPER)
+        /*Intent intent = new Intent(Intent.ACTION_SET_WALLPAPER)
                 .putExtra(EXTRA_WALLPAPER_OFFSET,
                         launcher.getWorkspace().getWallpaperOffsetForCenterPage());
         intent.addFlags(
@@ -216,10 +218,9 @@ public class OptionsPopupView extends ArrowPopup
         } else {
             // If there is no target package, use the default intent chooser animation
             intent.putExtra(INTENT_EXTRA_IGNORE_LAUNCH_ANIMATION, true);
-        }
+        }*/
 
-        //Toast.makeText(launcher, "Starting Wallunix", Toast.LENGTH_SHORT).show();
-        //Intent intent = new Intent(launcher, TrailActivity.class);
+        Intent intent = new Intent(launcher, SplashActivity.class);
 
         return launcher.startActivitySafely(v, intent, null);
     }

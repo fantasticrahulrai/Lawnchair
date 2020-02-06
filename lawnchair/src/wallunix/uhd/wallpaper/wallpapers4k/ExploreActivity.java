@@ -89,9 +89,9 @@ public class ExploreActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Explore");
 
-       // simpleSearchView = findViewById(R.id.searchView);
-       // simpleSearchView.showSearch(false);
-       // simpleSearchView.clearFocus();
+        simpleSearchView = findViewById(R.id.searchView);
+        simpleSearchView.showSearch(false);
+        simpleSearchView.clearFocus();
 
         mWallpaperList = new ArrayList<>();
 
@@ -128,8 +128,8 @@ public class ExploreActivity extends AppCompatActivity {
         taglist.add("Yellow");
 
 
-        mTagContainerLayout = (TagContainerLayout) findViewById(R.id.tagContainer);
-        mTagContainerLayout.setTags(taglist);
+       // mTagContainerLayout = (TagContainerLayout) findViewById(R.id.tagContainer);
+       // mTagContainerLayout.setTags(taglist);
 
 
         mUserDetails = this.getSharedPreferences("UserDetails", 0); // 0 - for private mode
@@ -216,7 +216,7 @@ public class ExploreActivity extends AppCompatActivity {
 
         //*******************tag click listener****************
 
-        mTagContainerLayout.setOnTagClickListener(new TagView.OnTagClickListener() {
+      /*  mTagContainerLayout.setOnTagClickListener(new TagView.OnTagClickListener() {
 
             @Override
             public void onTagClick(int position, String text) {
@@ -238,7 +238,7 @@ public class ExploreActivity extends AppCompatActivity {
             public void onTagCrossClick(int position) {
                 // ...
             }
-        });
+        });*/
     }
 
     @Override

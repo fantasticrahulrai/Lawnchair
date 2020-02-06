@@ -18,9 +18,9 @@
 
 <resources>
 
-    <color name="colorPrimary">#00decb</color>
-    <color name="colorPrimaryDark">#00ab9a</color>
-    <color name="colorAccent">#00ab9a</color>
+    <color name="colorPrimaryWallunix">#00decb</color>
+    <color name="colorPrimaryDarkWallunix">#00ab9a</color>
+    <color name="colorAccentWallunix">#00ab9a</color>
 
     <color name="black">#101010</color>
     <color name="colorTint">#000000</color>

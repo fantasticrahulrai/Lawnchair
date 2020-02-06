@@ -64,7 +64,7 @@ import wallunix.uhd.wallpaper.wallpapers4k.SettingActivity;
 public class AutoWallpaperFragment extends Fragment {
 
     private ImageView imageView, info, setting;
-    private LabeledSwitch autoWallSwitch, quoteSwitch;
+    private LabeledSwitch autoWallSwitch;
 
 
     SharedPreferences mUserDetails;
@@ -72,7 +72,7 @@ public class AutoWallpaperFragment extends Fragment {
     String todaysPicString;
     String defaultWallString= "No Info";
     Wallpaper mWallpaper;
-    private boolean autoWallStatus, quoteStatus, jobRunning, alarmRunningQuote;
+    private boolean autoWallStatus, jobRunning, alarmRunningQuote;
     private boolean hasLoadedOnce= false;
 
     private Activity activity;
@@ -109,7 +109,6 @@ public class AutoWallpaperFragment extends Fragment {
         mUserDetails = getActivity().getSharedPreferences("UserDetails", 0); // 0 - for private mode
         todaysPicString=mUserDetails.getString("todayspick", defaultWallString);
         autoWallStatus=mUserDetails.getBoolean("autowall", false);
-        quoteStatus=mUserDetails.getBoolean("dailyquote", true);
         jobRunning = isJobServiceOn(getActivity());
 
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
@@ -122,7 +121,6 @@ public class AutoWallpaperFragment extends Fragment {
         setting= (ImageView)v.findViewById(R.id.setting);
 
         autoWallSwitch = v.findViewById(R.id.switchAuto);
-        quoteSwitch = v.findViewById(R.id.switchQuote);
 
 
         info.setOnClickListener(new View.OnClickListener() {
@@ -195,40 +193,6 @@ public class AutoWallpaperFragment extends Fragment {
         });
 
 
-        //**************************
-        quoteSwitch.setOnToggledListener((labeledSwitch, isOn) -> {
-
-            if(isOn){
-
-                mEditor = mUserDetails.edit();
-                mEditor.putBoolean("dailyquote", true );
-                mEditor.apply();
-
-                alarmRunningQuote = checkAlarmQuote(getActivity());
-
-                setAlarmQuote(getActivity());
-
-
-
-            }
-            else if(!isOn) {
-                mEditor = mUserDetails.edit();
-                mEditor.putBoolean("dailyquote", false );
-                mEditor.apply();
-
-
-                alarmRunningQuote = checkAlarmQuote(getActivity());
-
-                if(alarmRunningQuote) {
-                    cancelAlarmQuote(getActivity());
-                }
-
-
-            }
-
-        });
-
-
         try {
             loadSpotlight();
         }
@@ -252,7 +216,6 @@ public class AutoWallpaperFragment extends Fragment {
                 autoWallStatus=mUserDetails.getBoolean("autowall", false);
 
                 autoWallSwitch.setOn(isJobServiceOn(getActivity()));
-                quoteSwitch.setOn(checkAlarmQuote(getActivity()));
 
                 Boolean showAutoWallAd = mUserDetails.getBoolean("showAuto", true);
                 if(showAutoWallAd && !autoWallStatus)

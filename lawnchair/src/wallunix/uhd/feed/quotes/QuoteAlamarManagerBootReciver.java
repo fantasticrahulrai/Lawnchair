@@ -17,7 +17,7 @@
  *     along with Lawnchair Launcher.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package wallunix.uhd.wallpaper.wallpapers4k.Classes;
+package wallunix.uhd.feed.quotes;
 
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
@@ -32,6 +32,8 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import java.io.File;
 import java.util.ArrayList;
+import wallunix.uhd.wallpaper.wallpapers4k.Classes.ShareBroadcast;
+import wallunix.uhd.wallpaper.wallpapers4k.Classes.Wallpaper;
 import wallunix.uhd.wallpaper.wallpapers4k.MainActivity;
 
 
@@ -94,7 +96,7 @@ public class QuoteAlamarManagerBootReciver extends BroadcastReceiver {
         PendingIntent pi = PendingIntent.getActivity(context, 001, intent, 0);
 
         //*************************
-        Intent sendIntent = new Intent(context,ShareBroadcast.class);
+        Intent sendIntent = new Intent(context, ShareBroadcast.class);
         sendIntent.putExtra("Thought", thought);
         PendingIntent piAction1 = PendingIntent.getBroadcast(context, 001, sendIntent, 0);
 

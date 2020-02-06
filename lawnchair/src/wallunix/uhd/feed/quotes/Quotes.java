@@ -1,5 +1,5 @@
 /*
- *     Copyright (C) 2019 Lawnchair Team.
+ *     Copyright (C) 2020 Lawnchair Team.
  *
  *     This file is part of Lawnchair Launcher.
  *
@@ -17,7 +17,7 @@
  *     along with Lawnchair Launcher.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package wallunix.uhd.wallpaper.wallpapers4k.Classes;
+package wallunix.uhd.feed.quotes;
 
 import com.google.gson.annotations.SerializedName;
 

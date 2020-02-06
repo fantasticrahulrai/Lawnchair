@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SwitchPreference
+        android:key="notificationPref"
+        android:title="Show Notifications"
+        android:summary="Turn this off if you do not want to receive notification when new wallpapers are added."
+        android:defaultValue="true"/>
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="previewPref"
+        android:title="Preview Quality Low"
+        android:summary="Preview Quality is set to low for faster reload and low internet consumption."/>
+
+    <PreferenceCategory android:title="Auto Wallpaper Settings">
+
+
+        <ListPreference
+            android:defaultValue="Daily (Default)"
+            android:entries="@array/autowall_duration"
+            android:entryValues="@array/autowall_duration"
+            android:key="frequencyPref"
+            android:title="Auto Wallpaper Duration"
+            android:summary="You will need to reopen the app."/>
+
+        <ListPreference
+            android:defaultValue="Both (Home and Lockscreen)"
+            android:entries="@array/autowall_screens"
+            android:entryValues="@array/autowall_screens"
+            android:key="screenPref"
+            android:title="Screen for Auto Wallpaper"
+            android:summary="Select if auto wallpaper changes Homescreen or Lockscreen (For Android N and above)"/>
+
+
+    </PreferenceCategory>
+
+    <!--<Preference
+        android:key="feedPref"
+        android:title="Customize your Feed"
+        android:summary="Make your feed more personal with types of wallpaper you like the most" >
+        <intent
+            android:targetPackage="hd.uhd.wallpaper.wallpapers4k"
+            android:targetClass="hd.uhd.wallpaper.wallpapers4k.CustomizeFeedActivity"/>
+    </Preference>-->
+
+</PreferenceScreen>

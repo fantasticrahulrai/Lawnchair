@@ -18,4 +18,8 @@
 -->
 <resources>
     <color name="all_apps_navbar_color">#66FFFFFF</color>
+
+    <color name="colorPrimaryWallunix">#00decb</color>
+    <color name="colorPrimaryDarkWallunix">#00ab9a</color>
+    <color name="colorAccentWallunix">#00ab9a</color>
 </resources>

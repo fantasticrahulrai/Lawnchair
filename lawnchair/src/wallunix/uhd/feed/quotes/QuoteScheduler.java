@@ -1,5 +1,5 @@
 /*
- *     Copyright (C) 2019 Lawnchair Team.
+ *     Copyright (C) 2020 Lawnchair Team.
  *
  *     This file is part of Lawnchair Launcher.
  *
@@ -17,7 +17,7 @@
  *     along with Lawnchair Launcher.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package wallunix.uhd.wallpaper.wallpapers4k.Classes;
+package wallunix.uhd.feed.quotes;
 
 import android.app.PendingIntent;
 import android.app.job.JobParameters;
@@ -27,6 +27,7 @@ import android.content.Intent;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
 import com.android.launcher3.R;
+import wallunix.uhd.wallpaper.wallpapers4k.Classes.ShareBroadcast;
 import wallunix.uhd.wallpaper.wallpapers4k.MainActivity;
 
 public class QuoteScheduler extends JobService {
@@ -69,7 +70,7 @@ public class QuoteScheduler extends JobService {
         PendingIntent pi = PendingIntent.getActivity(context, 001, intent, 0);
 
         //*************************
-        Intent sendIntent = new Intent(context,ShareBroadcast.class);
+        Intent sendIntent = new Intent(context, ShareBroadcast.class);
         sendIntent.putExtra("Thought", thought);
         PendingIntent piAction1 = PendingIntent.getBroadcast(context, 001, sendIntent, 0);
 

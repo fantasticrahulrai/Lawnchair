@@ -22,10 +22,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ExploreActivity">
+    android:layout_height="match_parent">
 
-    <com.google.android.material.appbar.AppBarLayout
+    <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -41,22 +40,22 @@
             android:layout_height="wrap_content"
             app:layout_scrollFlags="scroll|enterAlways|snap">
 
-            <androidx.appcompat.widget.Toolbar
+            <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
-         <!--   <com.ferfalk.simplesearchview.SimpleSearchView
+            <com.ferfalk.simplesearchview.SimpleSearchView
                 android:id="@+id/searchView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/colorPrimary"
+                android:background="@color/colorPrimaryWallunix"
                 app:type="card"
-                app:voiceSearch="true" />-->
+                app:voiceSearch="true" />
 
         </FrameLayout>
 
-    </com.google.android.material.appbar.AppBarLayout>
+    </android.support.design.widget.AppBarLayout>
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -64,7 +63,7 @@
         android:layout_marginTop="0dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <co.lujun.androidtagview.TagContainerLayout
+        <!--<co.lujun.androidtagview.TagContainerLayout
             android:id="@+id/tagContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -86,9 +85,9 @@
             app:layout_constraintTop_toTopOf="parent"
             app:tag_clickable="true"
             app:tag_theme="random"
-            app:vertical_interval="10dp" />
+            app:vertical_interval="10dp" /> -->
 
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/pullToRefresh"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -112,7 +111,7 @@
             android:verticalSpacing="2dp" />
 
 
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </android.support.v4.widget.SwipeRefreshLayout>
 
     <com.cleveroad.androidmanimation.LoadingAnimationView
         android:id="@+id/animation"

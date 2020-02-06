@@ -159,50 +159,11 @@
                     android:id="@+id/switchAuto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
                     android:text="Auto Wallpaper"
-                    android:layout_margin="8dp"
                     android:textSize="14sp"
-                    app:on="false"
-                    app:colorBorder="@color/colorAccent"/>
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:background="?android:attr/listDivider"/>
-
-            <LinearLayout
-                android:id="@+id/quote_of_the_day"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:gravity="center_vertical"
-                android:minHeight="@dimen/md_listitem_height"
-                android:orientation="horizontal"
-                android:paddingTop="2dp"
-                android:paddingBottom="4dp"
-                android:paddingLeft="32dp"
-                android:paddingRight="16dp">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Thought of the day"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
-
-
-                <com.github.angads25.toggle.widget.LabeledSwitch
-                    android:id="@+id/switchQuote"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:textSize="14sp"
-                    app:on="true"
-                    app:colorBorder="@color/colorAccent"/>
+                    app:colorBorder="@color/colorAccentWallunix"
+                    app:on="false" />
 
             </LinearLayout>
 
@@ -217,7 +178,7 @@
                 android:paddingBottom="2dp"
                 android:paddingLeft="32dp"
                 android:paddingRight="16dp"
-                android:background="@color/primary">
+                android:background="@color/colorPrimaryWallunix">
 
 
                 <TextView

@@ -43,10 +43,6 @@ public class SplashActivity extends FancyWalkthroughActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Fabric.with(this, new Crashlytics());
-        Fabric.with(this, new Answers());
-
-
 
         //setContentView(R.layout.activity_splash);
 

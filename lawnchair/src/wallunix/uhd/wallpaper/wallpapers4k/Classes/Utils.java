@@ -31,15 +31,9 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.net.Uri;
 import android.preference.PreferenceManager;
 import android.provider.MediaStore;
-import android.support.constraint.ConstraintLayout;
-import android.support.design.widget.AppBarLayout;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -53,6 +47,8 @@ import java.io.InputStream;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Random;
+import wallunix.uhd.feed.quotes.QuoteAlamarManagerBootReciver;
+import wallunix.uhd.feed.quotes.QuoteScheduler;
 
 public class Utils {
 

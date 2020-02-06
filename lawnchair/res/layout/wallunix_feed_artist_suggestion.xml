@@ -48,7 +48,7 @@
             android:text="We recommend signing in"
             android:textAllCaps="true"
             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-            android:textColor="@color/primary"
+            android:textColor="@color/colorPrimaryWallunix"
             android:textSize="20dp"
             android:layout_weight="1"
             android:textStyle="bold" />

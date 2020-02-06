@@ -367,59 +367,34 @@
         <activity
             android:name="wallunix.uhd.wallpaper.wallpapers4k.WallpaperClickArtistActivity"
             android:theme="@style/FullScreenTheme" />
-        <activity android:name="wallunix.uhd.wallpaper.wallpapers4k.ArtistWallpaperActivity" />
-        <activity android:name="wallunix.uhd.wallpaper.wallpapers4k.ArtistFollowingActivity" />
-        <activity android:name="wallunix.uhd.wallpaper.wallpapers4k.ArtistProfileActivity" />
-        <activity android:name="wallunix.uhd.wallpaper.wallpapers4k.ProfileActivity" />
-        <activity android:name="wallunix.uhd.wallpaper.wallpapers4k.CategoryClickActivity" />
-        <activity android:name="wallunix.uhd.wallpaper.wallpapers4k.CategoryActivity" />
-        <activity android:name="wallunix.uhd.wallpaper.wallpapers4k.PopularActivity" />
-        <activity
-            android:name="wallunix.uhd.wallpaper.wallpapers4k.IntroActivity"
-            android:theme="@style/FullScreenTheme" />
+        <activity android:name="wallunix.uhd.wallpaper.wallpapers4k.ArtistWallpaperActivity"
+            android:theme="@style/WallUnixTheme"/>
+        <activity android:name="wallunix.uhd.wallpaper.wallpapers4k.ArtistFollowingActivity"
+            android:theme="@style/WallUnixTheme"/>
+        <activity android:name="wallunix.uhd.wallpaper.wallpapers4k.ArtistProfileActivity"
+            android:theme="@style/WallUnixTheme"/>
+        <activity android:name="wallunix.uhd.wallpaper.wallpapers4k.ProfileActivity"
+            android:theme="@style/WallUnixTheme"/>
+        <activity android:name="wallunix.uhd.wallpaper.wallpapers4k.CategoryClickActivity"
+            android:theme="@style/WallUnixTheme"/>
+        <activity android:name="wallunix.uhd.wallpaper.wallpapers4k.CategoryActivity"
+            android:theme="@style/WallUnixTheme"/>
+        <activity android:name="wallunix.uhd.wallpaper.wallpapers4k.PopularActivity"
+            android:theme="@style/WallUnixTheme"/>
+
         <activity
             android:name="wallunix.uhd.wallpaper.wallpapers4k.WallpaperClickActivity"
             android:theme="@style/FullScreenTheme" />
-        <activity
-            android:name="wallunix.uhd.wallpaper.wallpapers4k.AdminDetailActivity"
-            android:theme="@style/AppThemeNoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
 
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data
-                    android:host="4kwallpapers"
-                    android:scheme="http" />
-            </intent-filter>
-        </activity>
-        <activity android:name="wallunix.uhd.wallpaper.wallpapers4k.NotchWallpaperActivity" />
-        <activity android:name="wallunix.uhd.wallpaper.wallpapers4k.LockscreenActivity" />
-        <activity android:name="wallunix.uhd.wallpaper.wallpapers4k.AboutActivity" />
+        <activity android:name="wallunix.uhd.wallpaper.wallpapers4k.NotchWallpaperActivity"
+            android:theme="@style/WallUnixTheme"/>
+        <activity android:name="wallunix.uhd.wallpaper.wallpapers4k.LockscreenActivity"
+            android:theme="@style/WallUnixTheme"/>
+        <activity android:name="wallunix.uhd.wallpaper.wallpapers4k.AboutActivity"
+            android:theme="@style/WallUnixTheme"/>
         <activity
             android:name="wallunix.uhd.wallpaper.wallpapers4k.MainActivity"
             android:theme="@style/AppThemeNoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data
-                    android:host="4kwallpapers"
-                    android:scheme="http" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data
-                    android:host="4kwallpapersandbackgroundshd"
-                    android:scheme="http" />
-            </intent-filter>
         </activity> <!-- Include the AdActivity configChanges and theme. -->
         <activity
             android:name="com.google.android.gms.ads.AdActivity"
@@ -431,18 +406,14 @@
         <activity
             android:name="wallunix.uhd.wallpaper.wallpapers4k.SplashActivity"
             android:theme="@style/SplashTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <activity android:name="wallunix.uhd.wallpaper.wallpapers4k.AdminDashboardActivity" /> <!-- -Commment -->
-        <activity android:name="wallunix.uhd.wallpaper.wallpapers4k.SettingActivity" />
-        <activity android:name="wallunix.uhd.wallpaper.wallpapers4k.FavouriteActivity" />
 
-        <activity android:name="wallunix.TrailActivity"
-            android:theme="@style/WallUnixTheme"></activity>
+        <!-- -Commment -->
+        <activity android:name="wallunix.uhd.wallpaper.wallpapers4k.SettingActivity"
+            android:theme="@style/WallUnixTheme"/>
+        <activity android:name="wallunix.uhd.wallpaper.wallpapers4k.FavouriteActivity"
+            android:theme="@style/WallUnixTheme"/>
+
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
@@ -471,7 +442,7 @@
             android:value="uSFMY6ANnqoOoJprbAZAbA8bbETNzPcM6ylDYaOt" />
 
         <receiver
-            android:name="wallunix.uhd.wallpaper.wallpapers4k.Classes.QuoteAlamarManagerBootReciver"
+            android:name="wallunix.uhd.feed.quotes.QuoteAlamarManagerBootReciver"
             android:enabled="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
@@ -489,7 +460,7 @@
             android:permission="android.permission.BIND_JOB_SERVICE" />
 
         <service
-            android:name="wallunix.uhd.wallpaper.wallpapers4k.Classes.QuoteScheduler"
+            android:name="wallunix.uhd.feed.quotes.QuoteScheduler"
             android:exported="true"
             android:permission="android.permission.BIND_JOB_SERVICE" />
 
