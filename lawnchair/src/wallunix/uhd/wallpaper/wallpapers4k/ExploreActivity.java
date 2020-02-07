@@ -32,8 +32,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
-import co.lujun.androidtagview.TagContainerLayout;
-import co.lujun.androidtagview.TagView;
 import com.android.launcher3.R;
 import com.cleveroad.androidmanimation.LoadingAnimationView;
 import com.ferfalk.simplesearchview.SimpleSearchView;
@@ -68,7 +66,7 @@ public class ExploreActivity extends AppCompatActivity {
 
     Toolbar toolbar;
     private SimpleSearchView simpleSearchView;
-    TagContainerLayout mTagContainerLayout;
+    //TagContainerLayout mTagContainerLayout;
 
     SharedPreferences mUserDetails;
     SharedPreferences.Editor mEditor;

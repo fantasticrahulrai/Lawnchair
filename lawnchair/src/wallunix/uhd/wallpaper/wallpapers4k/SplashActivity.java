@@ -24,11 +24,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Toast;
 import com.android.launcher3.R;
-import com.crashlytics.android.Crashlytics;
-import com.crashlytics.android.answers.Answers;
 import com.shashank.sony.fancywalkthroughlib.FancyWalkthroughActivity;
 import com.shashank.sony.fancywalkthroughlib.FancyWalkthroughCard;
-import io.fabric.sdk.android.Fabric;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -68,7 +65,7 @@ public class SplashActivity extends FancyWalkthroughActivity {
             String deviceName = android.os.Build.MANUFACTURER + " " + android.os.Build.MODEL;
             String display = android.os.Build.DISPLAY;
 
-            FancyWalkthroughCard fancywalkthroughCard1 = new FancyWalkthroughCard(deviceName.toUpperCase(), "All wallpapers are adapted to your device ",R.drawable.ic_launcher);
+            FancyWalkthroughCard fancywalkthroughCard1 = new FancyWalkthroughCard(deviceName.toUpperCase(), "All wallpapers are adapted to your device ",R.drawable.ic_launcher_wallunix);
             FancyWalkthroughCard fancywalkthroughCard2 = new FancyWalkthroughCard("Great artworks made by artists", "We recommend you checking WallUnix daily for new artworks.",R.drawable.intro_art);
             //FancyWalkthroughCard fancywalkthroughCard3 = new FancyWalkthroughCard("BETA Release", "We are adding new wallpapers everyday. Stay tuned.",R.drawable.intro_update);
             fancywalkthroughCard1.setDescriptionColor(R.color.black);

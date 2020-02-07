@@ -25,6 +25,7 @@ import static wallunix.uhd.wallpaper.wallpapers4k.Classes.Utils.getRandomDrawble
 import static wallunix.uhd.wallpaper.wallpapers4k.Classes.Utils.likeCounter;
 
 import android.Manifest;
+import android.app.ProgressDialog;
 import android.app.WallpaperManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -69,7 +70,6 @@ import com.google.firebase.storage.FileDownloadTask.TaskSnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
-import com.ontbee.legacyforks.cn.pedant.SweetAlert.SweetAlertDialog;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -92,7 +92,6 @@ public class FullscreenActivity extends AppCompatActivity implements RewardedVid
 
     private InterstitialAd mInterstitialAd;
 
-    SweetAlertDialog pDialogSet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -338,10 +337,9 @@ public class FullscreenActivity extends AppCompatActivity implements RewardedVid
 
     public void downloadWallpaper(StorageReference storageRef){
 
-        SweetAlertDialog pDialog = new SweetAlertDialog(this, SweetAlertDialog.PROGRESS_TYPE);
-        pDialog.setTitleText("Downloading...");
-        pDialog.setCancelable(false);
-        pDialog.show();
+        final ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setTitle("Downloading...");
+        progressDialog.show();
 
 
         try {
@@ -351,7 +349,7 @@ public class FullscreenActivity extends AppCompatActivity implements RewardedVid
                 public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
                    final Bitmap bitmap = BitmapFactory.decodeFile(localFile.getAbsolutePath());
                    // mImageView.setImageBitmap(bitmap);
-                    pDialog.dismiss();
+                    progressDialog.dismiss();
 
                     saveImage(bitmap);
                     //setWallpaper(bitmap);
@@ -362,7 +360,7 @@ public class FullscreenActivity extends AppCompatActivity implements RewardedVid
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception exception) {
-                    pDialog.dismiss();
+                    progressDialog.dismiss();
                 }
             }).addOnProgressListener(new OnProgressListener<TaskSnapshot>() {
                 @Override
@@ -370,7 +368,7 @@ public class FullscreenActivity extends AppCompatActivity implements RewardedVid
 
                     double progress = (100.0*taskSnapshot.getBytesTransferred()/taskSnapshot
                             .getTotalByteCount());
-                    pDialog.setContentText("Downloaded "+(int)progress+"%");
+                    progressDialog.setMessage("Downloaded "+(int)progress+"%");
                 }
             })
             ;
@@ -385,10 +383,9 @@ public class FullscreenActivity extends AppCompatActivity implements RewardedVid
     public void downloadWallpaperAndSet(StorageReference storageRef){
 
 
-        pDialogSet = new SweetAlertDialog(this, SweetAlertDialog.PROGRESS_TYPE);
-        pDialogSet.setTitleText("Setting Wallpaper...");
-        pDialogSet.setCancelable(false);
-        pDialogSet.show();
+        final ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setTitle("Setting Wallpaper...");
+        progressDialog.show();
 
 
         try {
@@ -399,7 +396,7 @@ public class FullscreenActivity extends AppCompatActivity implements RewardedVid
                     final Bitmap bitmap = BitmapFactory.decodeFile(localFile.getAbsolutePath());
                     // mImageView.setImageBitmap(bitmap);
                     setBitmap(bitmap);
-                    pDialogSet.dismiss();
+                    progressDialog.dismiss();
                     Toast.makeText(getApplicationContext(), "Wallpaper Set", Toast.LENGTH_SHORT).show();
                     //***************saving the pics if fetching is successful***********************************************************
 
@@ -408,7 +405,7 @@ public class FullscreenActivity extends AppCompatActivity implements RewardedVid
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception exception) {
-                    pDialogSet.dismiss();
+                    progressDialog.dismiss();
                 }
             }).addOnProgressListener(new OnProgressListener<TaskSnapshot>() {
                 @Override
@@ -416,7 +413,7 @@ public class FullscreenActivity extends AppCompatActivity implements RewardedVid
 
                     double progress = (100.0*taskSnapshot.getBytesTransferred()/taskSnapshot
                             .getTotalByteCount());
-                    pDialogSet.setContentText("Downloaded "+(int)progress+"%");
+                    progressDialog.setMessage("Downloaded "+(int)progress+"%");
                 }
             })
             ;
@@ -485,7 +482,6 @@ public class FullscreenActivity extends AppCompatActivity implements RewardedVid
             myWallpaperManager.setBitmap(bitmap);
 
             Toast.makeText(getApplicationContext(), "Wallpaper Set", Toast.LENGTH_SHORT).show();
-            pDialogSet.dismiss();
 
         } catch (Exception e) {
             // TODO Auto-generated catch block
@@ -497,10 +493,9 @@ public class FullscreenActivity extends AppCompatActivity implements RewardedVid
     //************************ more options method *********
     public void downloadWallpaperAndSetMore(StorageReference storageRef){
 
-        SweetAlertDialog pDialog = new SweetAlertDialog(this, SweetAlertDialog.PROGRESS_TYPE);
-        pDialog.setTitleText("Loading more options...");
-        pDialog.setCancelable(false);
-        pDialog.show();
+        final ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setTitle("Loading more options...");
+        progressDialog.show();
 
         try {
             final File localFile = File.createTempFile("images", "jpg");
@@ -510,7 +505,7 @@ public class FullscreenActivity extends AppCompatActivity implements RewardedVid
                     final Bitmap bitmap = BitmapFactory.decodeFile(localFile.getAbsolutePath());
                     // mImageView.setImageBitmap(bitmap);
                     setBitmapMore(bitmap);
-                    pDialog.dismiss();
+                    progressDialog.dismiss();
                     //***************saving the pics if fetching is successful****************
 
 
@@ -518,7 +513,7 @@ public class FullscreenActivity extends AppCompatActivity implements RewardedVid
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception exception) {
-                    pDialog.dismiss();
+                    progressDialog.dismiss();
                 }
             }).addOnProgressListener(new OnProgressListener<TaskSnapshot>() {
                 @Override
@@ -526,7 +521,7 @@ public class FullscreenActivity extends AppCompatActivity implements RewardedVid
 
                     double progress = (100.0*taskSnapshot.getBytesTransferred()/taskSnapshot
                             .getTotalByteCount());
-                    pDialog.setContentText("Downloaded "+(int)progress+"%");
+                    progressDialog.setMessage("Downloaded "+(int)progress+"%");
                 }
             })
             ;

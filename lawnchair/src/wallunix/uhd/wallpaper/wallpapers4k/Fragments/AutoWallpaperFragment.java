@@ -43,11 +43,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import android.widget.Toast;
 import com.android.launcher3.R;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestBuilder;
 import com.github.angads25.toggle.widget.LabeledSwitch;
-import com.ontbee.legacyforks.cn.pedant.SweetAlert.SweetAlertDialog;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
@@ -164,10 +164,8 @@ public class AutoWallpaperFragment extends Fragment {
                 if(!jobRunning) {
                     turnOnJobScheduler(getActivity());
 
-                    new SweetAlertDialog(activity, SweetAlertDialog.SUCCESS_TYPE)
-                            .setTitleText("Auto Wallpaper On")
-                            .setContentText("And set to "+ intervalPref)
-                            .show();
+                    Toast.makeText(getActivity(), "Auto Wallpaper On "+ "And set to "+ intervalPref, Toast.LENGTH_SHORT).show();
+
                 }
 
 
@@ -182,9 +180,9 @@ public class AutoWallpaperFragment extends Fragment {
 
                 if(jobRunning) {
                     turnOffJobScheduler(getActivity());
-                    new SweetAlertDialog(activity, SweetAlertDialog.SUCCESS_TYPE)
-                            .setTitleText("Auto Wallpaper Off")
-                            .show();
+
+                    Toast.makeText(getActivity(), "Auto Wallpaper is off", Toast.LENGTH_SHORT).show();
+
                 }
 
 

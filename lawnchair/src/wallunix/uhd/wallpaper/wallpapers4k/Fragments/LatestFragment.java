@@ -43,7 +43,6 @@ import com.android.launcher3.R;
 import com.cleveroad.androidmanimation.LoadingAnimationView;
 import com.codemybrainsout.ratingdialog.RatingDialog;
 import com.google.gson.Gson;
-import com.ontbee.legacyforks.cn.pedant.SweetAlert.SweetAlertDialog;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
@@ -383,10 +382,8 @@ public class LatestFragment extends Fragment {
 
                 } else {
 
-                    new SweetAlertDialog(getActivity(), SweetAlertDialog.ERROR_TYPE)
-                            .setTitleText("Oops...Server Error")
-                            .setContentText("Please check your internet connection")
-                            .show();
+                    Toast.makeText(getActivity(), "Oops...Server Error", Toast.LENGTH_SHORT).show();
+
 
                 }
             }
