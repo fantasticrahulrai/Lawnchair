@@ -397,7 +397,7 @@ public class LauncherClient {
         BridgeInfo bridgeInfo = proxy ? FeedBridge.Companion.getInstance(context).resolveBridge() : null;
         String pkg = context.getPackageName();
         return new Intent("com.android.launcher3.WINDOW_OVERLAY")
-                .setPackage(bridgeInfo != null ? bridgeInfo.getPackageName() : "com.google.android.googlequicksearchbox")
+                .setPackage(bridgeInfo != null ? bridgeInfo.getPackageName() : "hd.uhd.wallpaper.wallpapers4k")
                 .setData(Uri.parse(new StringBuilder(pkg.length() + 18)
                             .append("app://")
                             .append(pkg)
