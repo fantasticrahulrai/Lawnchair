@@ -134,7 +134,7 @@
 
         <activity-alias
             android:name="wallunix.uhd.wallpaper.wallpapers4k.SplashLauncherActivity"
-            android:targetActivity="wallunix.uhd.wallpaper.wallpapers4k.SplashActivity"
+            android:targetActivity="wallunix.uhd.wallpaper.wallpapers4k.MainActivity"
             android:label="@string/wallunix_wallpaper"
             android:icon="@mipmap/ic_wallunix_wallpapers">
             <intent-filter>
@@ -170,10 +170,6 @@
             android:name="ch.deletescape.lawnchair.font.settingsui.FontSelectionActivity"
             android:theme="@style/SettingsTheme.V2"
             android:parentActivityName="ch.deletescape.lawnchair.settings.ui.SettingsActivity" />
-
-        <activity
-            android:name="com.android.launcher3.SettingsActivity"
-            tools:node="remove" />
 
         <service
             android:name="com.android.launcher3.uioverrides.WallpaperManagerCompat$ColorExtractionService"

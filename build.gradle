@@ -300,19 +300,13 @@ dependencies {
 
     //3rd party libraries
     implementation 'com.mikepenz:materialdrawer:6.0.9'
-    implementation 'com.github.franmontiel:AttributionPresenter:1.0.1'
     implementation 'com.github.Shashank02051997:FancyGifDialog-Android:1.1'
-    implementation 'com.github.Shashank02051997:FancyWalkthrough-Android:2.1'
     implementation 'com.ablanco.zoomy:zoomy:1.1.0'
     implementation 'com.cleveroad:androidmanimation:0.9.1'
     implementation 'com.codemybrainsout.rating:ratingdialog:1.0.8'
     implementation 'de.hdodenhof:circleimageview:3.0.1' //circular image
     implementation 'com.google.code.gson:gson:2.8.5' //gson
-     //implementation 'com.github.thomper:sweet-alert-dialog:1.4.0' //dialoug
-    implementation 'com.github.angads25:toggle:1.1.0' //switch
     implementation 'com.github.Ferfalk:SimpleSearchView:0.1.1'//search
-    //implementation 'co.lujun:androidtagview:1.1.2' //tag
-    implementation 'com.github.fantasticrahulrai:BubbleActions:2.0.0' // pintrest bubble menu
 
 
 

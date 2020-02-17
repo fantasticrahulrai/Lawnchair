@@ -21,11 +21,8 @@ package wallunix.uhd.wallpaper.wallpapers4k.Fragments;
 
 
 import static wallunix.uhd.wallpaper.wallpapers4k.Classes.Utils.RATE_ON_GOOGLE_PLAY;
-import static wallunix.uhd.wallpaper.wallpapers4k.Classes.Utils.cancelAlarmQuote;
-import static wallunix.uhd.wallpaper.wallpapers4k.Classes.Utils.checkAlarmQuote;
 import static wallunix.uhd.wallpaper.wallpapers4k.Classes.Utils.isJobServiceOn;
 import static wallunix.uhd.wallpaper.wallpapers4k.Classes.Utils.openUrl;
-import static wallunix.uhd.wallpaper.wallpapers4k.Classes.Utils.setAlarmQuote;
 import static wallunix.uhd.wallpaper.wallpapers4k.Classes.Utils.turnOffJobScheduler;
 import static wallunix.uhd.wallpaper.wallpapers4k.Classes.Utils.turnOnJobScheduler;
 
@@ -41,20 +38,19 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
-
+import android.widget.Switch;
 import android.widget.Toast;
 import com.android.launcher3.R;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestBuilder;
-import com.github.angads25.toggle.widget.LabeledSwitch;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.shashank.sony.fancygifdialoglib.FancyGifDialog;
 import com.shashank.sony.fancygifdialoglib.FancyGifDialogListener;
-
 import java.util.List;
 import wallunix.uhd.wallpaper.wallpapers4k.Classes.Wallpaper;
 import wallunix.uhd.wallpaper.wallpapers4k.FullscreenActivity;
@@ -64,7 +60,7 @@ import wallunix.uhd.wallpaper.wallpapers4k.SettingActivity;
 public class AutoWallpaperFragment extends Fragment {
 
     private ImageView imageView, info, setting;
-    private LabeledSwitch autoWallSwitch;
+    private Switch autoWallSwitch;
 
 
     SharedPreferences mUserDetails;
@@ -150,45 +146,48 @@ public class AutoWallpaperFragment extends Fragment {
             }
         });
 
-        autoWallSwitch.setOn(jobRunning);
-        autoWallSwitch.setOnToggledListener((labeledSwitch, isOn) -> {
+        autoWallSwitch.setChecked(autoWallStatus);
+        autoWallSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
-            if(isOn){
+                if(isChecked){
 
-                mEditor = mUserDetails.edit();
-                mEditor.putBoolean("autowall", true );
-                mEditor.apply();
+                    mEditor = mUserDetails.edit();
+                    mEditor.putBoolean("autowall", true );
+                    mEditor.apply();
 
-                jobRunning = isJobServiceOn(getActivity());
+                    jobRunning = isJobServiceOn(getActivity());
 
-                if(!jobRunning) {
-                    turnOnJobScheduler(getActivity());
+                    if(!jobRunning) {
+                        turnOnJobScheduler(getActivity());
 
-                    Toast.makeText(getActivity(), "Auto Wallpaper On "+ "And set to "+ intervalPref, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "Auto Wallpaper On "+ "And set to "+ intervalPref, Toast.LENGTH_SHORT).show();
+
+                    }
+
+
+                }
+                else if(!isChecked) {
+                    mEditor = mUserDetails.edit();
+                    mEditor.putBoolean("autowall", false );
+                    mEditor.apply();
+
+
+                    jobRunning = isJobServiceOn(getActivity());
+
+                    if(jobRunning) {
+                        turnOffJobScheduler(getActivity());
+
+                        Toast.makeText(getActivity(), "Auto Wallpaper is off", Toast.LENGTH_SHORT).show();
+
+                    }
+
 
                 }
 
-
             }
-            else if(!isOn) {
-                mEditor = mUserDetails.edit();
-                mEditor.putBoolean("autowall", false );
-                mEditor.apply();
-
-
-                jobRunning = isJobServiceOn(getActivity());
-
-                if(jobRunning) {
-                    turnOffJobScheduler(getActivity());
-
-                    Toast.makeText(getActivity(), "Auto Wallpaper is off", Toast.LENGTH_SHORT).show();
-
-                }
-
-
-            }
-
         });
+
 
 
         try {
@@ -213,7 +212,7 @@ public class AutoWallpaperFragment extends Fragment {
 
                 autoWallStatus=mUserDetails.getBoolean("autowall", false);
 
-                autoWallSwitch.setOn(isJobServiceOn(getActivity()));
+                autoWallSwitch.setChecked(isJobServiceOn(getActivity()));
 
                 Boolean showAutoWallAd = mUserDetails.getBoolean("showAuto", true);
                 if(showAutoWallAd && !autoWallStatus)

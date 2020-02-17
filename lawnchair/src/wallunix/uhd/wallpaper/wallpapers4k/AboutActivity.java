@@ -41,14 +41,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.android.launcher3.R;
-import com.franmontiel.attributionpresenter.AttributionPresenter;
-import com.franmontiel.attributionpresenter.entities.Attribution;
-import com.franmontiel.attributionpresenter.entities.Library;
-import com.franmontiel.attributionpresenter.entities.License;
-import com.parse.GetCallback;
-import com.parse.ParseException;
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
 
 
 public class AboutActivity extends AppCompatActivity implements View.OnClickListener {
@@ -273,22 +265,6 @@ public class AboutActivity extends AppCompatActivity implements View.OnClickList
 
     private void licencesDialoug(){
 
-        AttributionPresenter attributionPresenter = new AttributionPresenter.Builder(this)
-
-                .addAttributions(
-                        Library.GLIDE,
-                        Library.GSON)
-
-                .addAttributions(
-                        new Attribution.Builder("AttributionPresenter")
-                                .addCopyrightNotice("Copyright 2017 Francisco José Montiel Navarro")
-                                .addLicense(License.APACHE)
-                                .setWebsite("https://github.com/franmontiel/AttributionPresenter")
-                                .build()
-                )
-                .build();
-
-        attributionPresenter.showDialog("Open Source Libraries");
     }
 
 

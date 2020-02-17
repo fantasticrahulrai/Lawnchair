@@ -20,9 +20,6 @@
 package wallunix.uhd.wallpaper.wallpapers4k.Fragments;
 
 
-import static wallunix.uhd.wallpaper.wallpapers4k.Classes.Utils.likeCounter;
-import static wallunix.uhd.wallpaper.wallpapers4k.Classes.Utils.share;
-import static wallunix.uhd.wallpaper.wallpapers4k.Classes.Utils.shareWhatsapp;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -45,8 +42,6 @@ import com.parse.ParseQuery;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import me.samthompson.bubbleactions.BubbleActions;
-import me.samthompson.bubbleactions.Callback;
 import wallunix.uhd.wallpaper.wallpapers4k.Adapters.ImageAdapter;
 import wallunix.uhd.wallpaper.wallpapers4k.Classes.EditorsChoiceSqlite;
 import wallunix.uhd.wallpaper.wallpapers4k.Classes.FavouriteWallpaperSqlite;
@@ -129,44 +124,6 @@ public class FeaturedFragment extends Fragment {
                 startActivity(i);
 
 
-            }
-        });
-
-
-        gridview.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-
-            @Override
-            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int position, long id) {
-
-                final Wallpaper mWallpaper;
-                mWallpaper = mWallpaperList.get(position);
-
-                BubbleActions.on(v)
-                        .addAction("Favourite", R.drawable.bubble_fav, new Callback() {
-                            @Override
-                            public void doAction() {
-                                sqdb2.addWallpapers(mWallpaper);
-                                likeCounter(mWallpaper);
-                            }
-                        })
-                        .addAction("Share", R.drawable.bubble_share, new Callback() {
-                            @Override
-                            public void doAction() {
-
-                                share(getActivity(), "Hey found an awesome wallpaper:"+mWallpaper.getWallpaper());
-
-                            }
-                        })
-                        .addAction("WhatsApp", R.drawable.bubble_whatsapp, new Callback() {
-                            @Override
-                            public void doAction() {
-
-                                shareWhatsapp(getActivity(), "Hey found an awesome wallpaper:"+mWallpaper.getWallpaper());
-                            }
-                        })
-                        .show();
-
-                return false;
             }
         });
 
