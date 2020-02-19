@@ -220,7 +220,7 @@ public class OptionsPopupView extends ArrowPopup
             intent.putExtra(INTENT_EXTRA_IGNORE_LAUNCH_ANIMATION, true);
         }*/
 
-        Intent intent = new Intent(launcher, SplashActivity.class);
+        Intent intent = new Intent(launcher, MainActivity.class);
 
         return launcher.startActivitySafely(v, intent, null);
     }

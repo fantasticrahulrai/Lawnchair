@@ -184,7 +184,7 @@
     <string-array name="greetings_noon">
         <item>You are halfway through the day</item>
         <item>Good Afternoon!</item>
-        <item>Stay focused on the second half</item>
+        <item>Stay focused in the second half</item>
         <item>Still have half day, make it count</item>
     </string-array>
 
@@ -836,24 +836,6 @@
 
     <string name="rohan_rai">Rohan Rai</string>
     <string name="rohan_rai_summary">For his idea and concept.</string>
-    <string name="nashrat">Nasharat Khankhana</string>
-    <string name="nashrat_summary">For being the core and valuable member of the team.</string>
-    <string name="designer">Anisha Designs</string>
-    <string name="designer_summary">For pretty app icon.</string>
-
-    <string name="report_bugs">Report bugs</string>
-    <string name="report_bugs_summary">Report bugs or request new features.</string>
-    <string name="join_community">Join the community</string>
-    <string name="join_community_summary">If you want to join as a designer or photographer and share your wallpaper on 4K Wallpapers, join the community.</string>
-    <string name="translate">Translate</string>
-    <string name="translate_summary">Help translating WallsHD to your native language.</string>
-    <string name="rate_on_google_play">Rate</string>
-    <string name="rate_on_google_play_summary">Leave a positive rating on Google Play if you like 4K Wallpapers.</string>
-    <string name="donate">Donate</string>
-    <string name="donate_summary">If you think I deserve to get paid for my work, you can leave me a few dollars here.</string>
-
-
-    <string name="title_activity_sponsor">Sponsor</string>
     <string name="title_activity_about">About Us</string>
 
 
@@ -937,5 +919,50 @@
         <item>Homescreen</item>
         <item>Lockscreen</item>
     </string-array>
+
+
+    <string-array name="mantras">
+        <item>Stay true.</item>
+        <item>Accept the challenge.</item>
+        <item>Value yourself.</item>
+        <item>Live what you love.</item>
+        <item>Progress, not perfection.</item>
+        <item>Rise above.</item>
+        <item>Do no harm.</item>
+        <item>Be the change.</item>
+        <item>One step at a time.</item>
+        <item> Trust your intuition.</item>
+        <item> You are not alone.</item>
+        <item>Judge less, accept more.</item>
+        <item>Forgive yourself.</item>
+        <item>Because you can.</item>
+        <item>Think big, live simply.</item>
+        <item>Find your calm.</item>
+        <item>You are creative.</item>
+        <item>Give back.</item>
+        <item>Breathe.</item>
+        <item>You can and you will.</item>
+        <item>Let your light shine.</item>
+        <item>See the good.</item>
+        <item>Practice kindness.</item>
+        <item>Be a magnet for joy, love and abundance.</item>
+        <item>Care for yourself.</item>
+        <item>Persistence powers passion.</item>
+        <item>Choose joy.</item>
+        <item>Never give up!</item>
+        <item>Do your part.</item>
+        <item>Change your thoughts, change your world.</item>
+        <item>Maintain your balance.</item>
+        <item>Find joy in the ordinary.</item>
+        <item>Stay positive.</item>
+        <item>Stay magical.</item>
+        <item>Smile, breathe and go slowly.</item>
+        <item>Invest in yourself.</item>
+        <item>Where your focus goes, your energy flows.</item>
+        <item>Follow your passion.</item>
+        <item>Empower yourself.</item>
+        <item>Help others.</item>
+    </string-array>
+
 
 </resources>

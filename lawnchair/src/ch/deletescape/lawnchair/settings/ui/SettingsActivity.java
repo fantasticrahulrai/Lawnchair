@@ -17,6 +17,7 @@
 
 package ch.deletescape.lawnchair.settings.ui;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.ComponentName;
 import android.content.ContentResolver;
@@ -100,7 +101,9 @@ import com.android.launcher3.util.ContentWriter;
 import com.android.launcher3.util.ContentWriter.CommitParams;
 import com.android.launcher3.util.SettingsObserver;
 import com.android.launcher3.views.ButtonPreference;
+import com.codemybrainsout.ratingdialog.RatingDialog;
 import com.google.android.apps.nexuslauncher.reflection.ReflectionClient;
+import com.parse.ParseObject;
 import java.io.IOException;
 import java.util.Objects;
 import java.util.Set;
@@ -186,6 +189,7 @@ public class SettingsActivity extends SettingsBaseActivity implements
         }
 
         Utilities.getDevicePrefs(this).edit().putBoolean(OnboardingProvider.PREF_HAS_OPENED_SETTINGS, true).apply();
+        showDialog();
     }
 
     @Override
@@ -439,6 +443,7 @@ public class SettingsActivity extends SettingsBaseActivity implements
             }
         }
 
+        @SuppressLint("RestrictedApi")
         public RecyclerView onCreateRecyclerView(LayoutInflater inflater, ViewGroup parent,
                 Bundle savedInstanceState) {
             RecyclerView recyclerView = (RecyclerView) inflater
@@ -1093,5 +1098,27 @@ public class SettingsActivity extends SettingsBaseActivity implements
             intent.putExtra(EXTRA_TITLE, title);
         }
         return intent;
+    }
+
+    private void showDialog() {
+
+        final RatingDialog ratingDialog = new RatingDialog.Builder(this)
+                .threshold(3)
+                .session(2)
+                .onRatingBarFormSumbit(new RatingDialog.Builder.RatingDialogFormListener() {
+                    @Override
+                    public void onFormSubmitted(String feedback) {
+
+                        try {
+                            ParseObject gameScore = new ParseObject("Feedbacks");
+                            gameScore.put("msg", feedback);
+                            gameScore.saveInBackground();
+                        }
+                        catch (Exception e){}
+
+                    }
+                }).build();
+
+        ratingDialog.show();
     }
 }
